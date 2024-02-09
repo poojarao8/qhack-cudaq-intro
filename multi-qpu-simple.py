@@ -27,9 +27,9 @@ kernel.for_loop(start=0, stop=iters, function=do_something)
 
 # Sample the results asynchornously
 async_handles = []
-trotter_iters = 7
+num_iters = 7
 for qpu in range(num_qpus):
-    async_handles.append(cudaq.sample_async(kernel, trotter_iters, qpu_id=qpu))
+    async_handles.append(cudaq.sample_async(kernel, num_iters, qpu_id=qpu))
 
 print("I can do something else while I wait for the results")
 
